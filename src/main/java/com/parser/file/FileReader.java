@@ -1,6 +1,7 @@
 package com.parser.file;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -18,8 +19,15 @@ public class FileReader {
 		
 		String fileString="";
 		try {
-			fileString=Files.lines(Paths.get(s), StandardCharsets.UTF_8).collect(Collectors.joining("\n"));
-		} catch (IOException e) {
+			System.out.println("ClassLoader.getSystemResource(s).toURI() : "+ ClassLoader.getSystemResource(s));
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		try {
+			fileString=Files.lines(Paths.get(ClassLoader.getSystemResource(s).toURI()), StandardCharsets.UTF_8).collect(Collectors.joining("\n"));
+		} catch (IOException | URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
