@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class UdemyQuestionBean {
 
@@ -154,6 +155,15 @@ public class UdemyQuestionBean {
 				+ ", answerOption3=" + answerOption3 + ", answerOption4=" + answerOption4 + ", answerOption5="
 				+ answerOption5 + ", answerOption6=" + answerOption6 + ", correctResponse=" + correctResponse
 				+ ", explanation=" + explanation + ", knowledgeArea=" + knowledgeArea + "]";
+	}
+	
+	public String[] convertValuestoList(){
+		
+		
+		String[] header = {question, questionType.questionType,answerOption1,answerOption2,answerOption3,answerOption4,answerOption5,answerOption6,correctResponse,explanation,knowledgeArea};
+		
+		return header;
+		 
 	}
 	
 

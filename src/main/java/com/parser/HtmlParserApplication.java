@@ -25,7 +25,7 @@ public class HtmlParserApplication implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-		 getUdemyParser().parseHtml();
+		 getUdemyParser().parseHtmlAndCreateCSV();
 	}
 
 }
